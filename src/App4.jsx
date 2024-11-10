@@ -20,7 +20,7 @@ function App4() {
     event.preventDefault();
     // console.log(formData.passwordForm === formData.confirmPassword);
 
-    if (formData.passwordForm === formData.confirmPassword) {
+    if (formData.passwordForm == formData.confirmPassword) {
       console.log("Successfully signed up");
       alert("Successfully signed up");
       if (formData.isMarketing) {
