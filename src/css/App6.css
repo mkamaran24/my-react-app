@@ -12,6 +12,7 @@ body {
 * {
   -webkit-transition: 300ms;
   transition: 300ms;
+  margin: 0;
 }
 
 .intro {
@@ -209,4 +210,23 @@ a:hover {
     padding: 0;
     margin: 0;
   }
+}
+
+.win-size {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #6abcea;
+}
+
+.win-size button {
+  /* border: none; */
+  cursor: pointer;
+  padding: 10px;
+}
+
+.win-size h1 {
+  margin-top: 25px;
 }
