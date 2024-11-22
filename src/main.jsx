@@ -6,8 +6,9 @@ import App3 from "./App3.jsx";
 import App4 from "./App4.jsx";
 // import App5 from "./App5.jsx";
 // import "./App4.css";
-import "./css/App6.css";
+// import "./css/App6.css";
 // import App6 from "./App6.jsx";
 import App7 from "./App7.jsx";
-
-createRoot(document.getElementById("root")).render(<App7 />);
+import Counter from "./components/useRefEX/Counter.jsx";
+// import Timer from "./components/useRefEX/Timer.jsx";
+createRoot(document.getElementById("root")).render(<Counter />);
