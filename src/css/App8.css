@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.card-box {
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+/* form > div:first-child {
+  grid-column: span 4;
+} */
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form input[type="text"] {
+  padding: 20px;
+  border: 0;
+  outline: none;
+  background-color: black;
+  color: white;
+  text-align: right;
+}
+
+form > div:not(:first-child) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+form button {
+  color: white;
+  font-size: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #333333;
+}
+
+form button:last-child {
+  background-color: #ff9309;
+}
+
+form div:nth-child(2) button:nth-child(1),
+form div:nth-child(2) button:nth-child(2),
+form div:nth-child(2) button:nth-child(3) {
+  background-color: #a5a5a5;
+}
+
+form button:hover {
+  background-color: #aaa;
+}
+form div:last-child button:first-child {
+  grid-column: span 2;
+}
