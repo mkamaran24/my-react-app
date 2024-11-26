@@ -3,7 +3,13 @@ import Dice from "./components/Dice";
 import { nanoid } from "nanoid";
 
 function App9() {
-  const [dice, setDice] = React.useState(getAllDice());
+  const [dice, setDice] = React.useState(() => getAllDice());
+
+  const gameOver =
+    dice.every((val) => val.isHold) &&
+    dice.every((val) => val.value === dice[0].value);
+
+  console.log(gameOver);
 
   function getAllDice() {
     return new Array(10).fill(0).map(() => ({
@@ -20,7 +26,6 @@ function App9() {
       )
     );
   }
-  console.log(dice);
 
   const diceComp = dice.map((diceObj) => (
     <Dice
@@ -32,18 +37,23 @@ function App9() {
   ));
 
   function rollDice() {
-    setDice((oldDice) =>
-      oldDice.map((dice) =>
-        dice.isHold ? dice : { ...dice, value: Math.ceil(Math.random() * 6) }
-      )
-    );
+    if (!gameOver) {
+      setDice((oldDice) =>
+        oldDice.map((dice) =>
+          dice.isHold ? dice : { ...dice, value: Math.ceil(Math.random() * 6) }
+        )
+      );
+    } else {
+      setDice(getAllDice());
+    }
   }
 
   return (
     <main>
+      {gameOver && <h1>You Win</h1>}
       <div className="dice-container">{diceComp}</div>
       <button className="roll-dice" onClick={rollDice}>
-        Roll
+        {gameOver ? "Restart Game" : "Roll"}
       </button>
     </main>
   );
